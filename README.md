@@ -1,3 +1,8 @@
-# telaLogin
-Tela de Login e Cadastro em Java Android
-Será utilizado para inclementar outros app
+PI 5º Semestre ADS FATEC Indaiatuba
+
+Aplicativo para controle de finanças denominado My Money App
+
+funcionalidades:
+Cadastro de Entradas
+Cadastro de Despesa
+Consulta de Entradas e Despesas cadastradas
