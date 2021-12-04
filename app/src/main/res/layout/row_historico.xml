@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:elevation="8dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="#F2F0F0">
+
+            <TextView
+                android:id="@+id/txtTipoHist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textoTipo"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/txtCategoriaHist"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textoCategoria" />
+
+            <TextView
+                android:id="@+id/txtDbCategoriaHist"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textoCategoria" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/txtValorHist"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textoValor" />
+
+            <TextView
+                android:id="@+id/txtDbValorHist"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textoValor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/txtDataHist"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textoData" />
+
+            <TextView
+                android:id="@+id/txtDbDataHist"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/textoData" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdUpdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#123A12"
+                app:cardCornerRadius="16dp">
+
+                <TextView
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/textoAtualizar"
+                    android:textAlignment="center"
+                    android:textColor="#FFF" />
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/vwEspacador"
+                android:layout_width="16dp"
+                android:layout_height="10dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#E8171C"
+                app:cardCornerRadius="16dp">
+
+                <TextView
+                    android:id="@+id/btnDeletar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/textoApagar"
+                    android:textAlignment="center"
+                    android:textColor="#FFF" />
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

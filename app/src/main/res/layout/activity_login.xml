@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroung"
+    tools:context=".Activities.LoginActivity">
+    
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/iconeprincipal"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/cntConteudoLogin"
+        style="@style/ContainerComponents"
+        android:layout_height="255dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+    <EditText
+        android:id="@+id/edtEmailLogin"
+        style="@style/Edit_Text"
+        android:drawableEnd="@drawable/ic_email"
+        android:hint="@string/textoEmail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@id/cntConteudoLogin"
+        app:layout_constraintStart_toStartOf="@id/cntConteudoLogin"
+        app:layout_constraintTop_toTopOf="@id/cntConteudoLogin"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/edtSenhaLogin"
+        style="@style/Edit_Text"
+        android:drawableEnd="@drawable/ic_lock"
+        android:hint="@string/textoSenha"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/cntConteudoLogin"
+        app:layout_constraintStart_toStartOf="@id/cntConteudoLogin"
+        app:layout_constraintTop_toBottomOf="@id/edtEmailLogin"
+        android:importantForAutofill="no" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        style="@style/Button"
+        android:text="@string/textoEntrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtSenhaLogin" />
+
+    <TextView
+        android:id="@+id/txtTelaCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="300dp"
+        android:text="@string/textoTituloCadastro"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNovoUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtEsqueciSenha" />
+
+    <TextView
+        android:id="@+id/txtEsqueciSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/textoEsqueciSenha"
+        android:textColor="#DA0000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cntConteudoLogin" />
+
+    <TextView
+        android:id="@+id/txtNovoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/textoCadastro"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtTelaCadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtTelaCadastro" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroung"
+        tools:context=".Activities.TransacaoActivity">
+
+        <TextView
+            android:id="@+id/txtUserInfoTransacao"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/green_light"
+            android:gravity="center|start"
+            android:text="@string/textoNome"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTitleTransacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/textoCadastrarEntrada"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUserInfoTransacao" />
+
+        <View
+            android:id="@+id/cntConteudoTransacao"
+            style="@style/ContainerComponents"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleTransacao"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/spnCategoriaTransacao"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/text_field"
+            android:hint="@string/textoSelectCateg"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="@id/cntConteudoTransacao"
+            app:layout_constraintStart_toStartOf="@id/cntConteudoTransacao"
+            app:layout_constraintTop_toTopOf="@id/cntConteudoTransacao">
+            <AutoCompleteTextView
+                android:id="@+id/actCategoriaTransacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:padding="20dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/edtValorTransacao"
+            style="@style/Edit_Text"
+            android:hint="@string/textoDinheiro"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@id/cntConteudoTransacao"
+            app:layout_constraintStart_toStartOf="@id/cntConteudoTransacao"
+            app:layout_constraintTop_toBottomOf="@id/spnCategoriaTransacao"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/edtDataTransacao"
+            style="@style/Edit_Text"
+            android:hint="@string/textoSelectData"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="@id/cntConteudoTransacao"
+            app:layout_constraintStart_toStartOf="@id/cntConteudoTransacao"
+            app:layout_constraintTop_toBottomOf="@id/edtValorTransacao"
+            android:importantForAutofill="no" />
+
+
+        <EditText
+            android:id="@+id/edtObservacaoTransacao"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/edit_text"
+            android:gravity="top"
+            android:hint="@string/textoObservacao"
+            android:inputType="text"
+            android:maxLength="300"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="@id/cntConteudoTransacao"
+            app:layout_constraintStart_toStartOf="@id/cntConteudoTransacao"
+            app:layout_constraintTop_toBottomOf="@id/edtDataTransacao"
+            android:importantForAutofill="no" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCadastrarTransacao"
+            style="@style/Button"
+            android:text="@string/textoCadastrar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtObservacaoTransacao"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

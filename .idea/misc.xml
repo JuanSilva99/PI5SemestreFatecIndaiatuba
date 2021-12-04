@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_cadastro_entrada.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_cadastro_saida.xml" value="0.22" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_consulta.xml" value="0.33" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_cadastro.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_cadastro_despesas.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_cadastro_entrada.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_cadastro_saida.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_historico.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_login.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_menu.xml" value="0.33" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_relatorio.xml" value="0.25" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_form_usuario.xml" value="0.33" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_historico_list.xml" value="0.22570532915360503" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_menu.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_sobre.xml" value="0.25" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_update_transacao.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/activity_usuario.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/list_item.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/row_historico.xml" value="0.225" />
+        <entry key="..\:/Users/Zeke/AndroidStudioProjects/telaLogin/app/src/main/res/layout/teste.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/drawable/backgroung.xml" value="0.121875" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/drawable/button.xml" value="0.121875" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/drawable/container_components.xml" value="0.121875" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/drawable/container_user.xml" value="0.403125" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/drawable/edit_text.xml" value="0.121875" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/drawable/ic_user.xml" value="0.403125" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/drawable/text_field.xml" value="0.2359375" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_consulta.xml" value="0.25" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_cadastro.xml" value="0.22" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_cadastro_despesas.xml" value="0.25" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_cadastro_entrada.xml" value="0.2563405797101449" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_historico.xml" value="0.3729166666666667" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_login.xml" value="0.25" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_relatorio.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_form_usuario.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_main.xml" value="0.18135764944275581" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/activity_main2.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/fragment_first.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/fragment_second.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juang/Desktop/Juan/Fatec/5-Semestre/PI-5-Semestre/Telas/Login/app/src/main/res/layout/list_item.xml" value="0.38697916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

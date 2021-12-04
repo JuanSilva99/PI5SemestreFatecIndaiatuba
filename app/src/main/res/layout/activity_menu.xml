@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MenuActivity"
+    android:background="@drawable/backgroung">
+
+    <TextView
+        android:id="@+id/txtUserInfoMenu"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/green_light"
+        android:gravity="center|start"
+        android:text="@string/textoNome"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnMinhaConta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitleMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/textoMenu"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserInfoMenu" />
+
+    <View
+        android:id="@+id/cntConteudoMenu"
+        style="@style/ContainerComponents"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleMenu" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnInserirEntrada"
+        style="@style/Button"
+        android:text="@string/textoInserirEntrada"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@id/cntConteudoMenu"
+        app:layout_constraintStart_toStartOf="@id/cntConteudoMenu"
+        app:layout_constraintTop_toTopOf="@+id/cntConteudoMenu" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnInserirSaida"
+        style="@style/Button"
+        android:text="@string/textoInserirSaida"
+        app:layout_constraintEnd_toEndOf="@id/cntConteudoMenu"
+        app:layout_constraintStart_toStartOf="@id/cntConteudoMenu"
+        app:layout_constraintTop_toBottomOf="@+id/btnInserirEntrada" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConsultar"
+        style="@style/Button"
+        android:text="@string/textoConsultar"
+        app:layout_constraintEnd_toEndOf="@id/cntConteudoMenu"
+        app:layout_constraintStart_toStartOf="@id/cntConteudoMenu"
+        app:layout_constraintTop_toBottomOf="@+id/btnInserirSaida" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSobre"
+        style="@style/Button"
+        android:text="@string/textoSobre"
+        app:layout_constraintEnd_toEndOf="@id/cntConteudoMenu"
+        app:layout_constraintStart_toStartOf="@id/cntConteudoMenu"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsultar" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/black"
+        android:padding="18dp"
+        android:text="@string/textoSair"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        app:layout_constraintEnd_toEndOf="@id/cntConteudoMenu"
+        app:layout_constraintStart_toStartOf="@id/cntConteudoMenu"
+        app:layout_constraintTop_toBottomOf="@+id/btnSobre" />
+
+    <Button
+        android:id="@+id/btnMinhaConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/textoConta"
+        app:layout_constraintBottom_toBottomOf="@+id/txtUserInfoMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtUserInfoMenu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

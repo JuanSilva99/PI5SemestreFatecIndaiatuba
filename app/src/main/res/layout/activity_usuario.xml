@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroung"
+    tools:context=".Activities.UsuarioActivity">
+
+    <View
+        android:id="@+id/cntUser"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/container_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icnUserMyAcc1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_user"
+        app:layout_constraintBottom_toBottomOf="@id/cntUser"
+        app:layout_constraintEnd_toEndOf="@id/cntUser"
+        app:layout_constraintStart_toStartOf="@id/cntUser"
+        app:layout_constraintTop_toTopOf="@id/cntUser" />
+
+    <ImageView
+        android:id="@+id/icnUserMyAcc2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:src="@drawable/ic_user"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNomeUsuarioMyAcc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtNomeUsuarioMyAcc" />
+
+    <TextView
+        android:id="@+id/txtNomeUsuarioMyAcc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/textoNome"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icnUserMyAcc2"
+        app:layout_constraintTop_toBottomOf="@id/cntUser" />
+
+    <ImageView
+        android:id="@+id/icnEmailMyAcc"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEmailUsuarioMyAcc"
+        app:layout_constraintEnd_toEndOf="@+id/icnUserMyAcc2"
+        app:layout_constraintStart_toStartOf="@+id/icnUserMyAcc2"
+        app:layout_constraintTop_toTopOf="@+id/txtEmailUsuarioMyAcc" />
+
+    <TextView
+        android:id="@+id/txtEmailUsuarioMyAcc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/textoEmail"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtNomeUsuarioMyAcc"
+        app:layout_constraintTop_toBottomOf="@id/txtNomeUsuarioMyAcc" />
+
+    <Button
+        android:id="@+id/btnMudarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/black"
+        android:padding="18dp"
+        android:text="@string/textoMudarSenha"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnMudarNome"
+        app:layout_constraintTop_toTopOf="@+id/btnMudarNome" />
+
+    <Button
+        android:id="@+id/btnMudarNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/black"
+        android:padding="18dp"
+        android:text="@string/textoMudarNome"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnMudarSenha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailUsuarioMyAcc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

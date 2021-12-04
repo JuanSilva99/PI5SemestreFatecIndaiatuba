@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">LoginPI5S</string>
+    <string name="textoEntrar">Entrar</string>
+    <string name="textoCadastro">Novo usuário?</string>
+    <string name="textoTituloCadastro">Cadastre-se</string>
+    <string name="textoCadastrar">Cadastrar</string>
+    <string name="textoSelectCateg">Selecione uma categoria</string>
+    <string name="textoSelectData">Selecione uma data</string>
+    <string name="textoCadastrarSaida">Cadastrar Saída</string>
+    <string name="textoConsulta">Consulta</string>
+    <string name="textoAtualizar">Atualizar</string>
+    <string name="textoApagar">Apagar</string>
+    <string name="textoAtualizarTrans">Atualizar Transação</string>
+    <string name="textoInserirEntrada">Inserir Entrada</string>
+    <string name="textoInserirSaida">Inserir Saída</string>
+    <string name="textoConsultar">Consultar</string>
+    <string name="textoMenu">Menu Principal</string>
+    <string name="textoCadastrarEntrada">Cadastrar Entrada</string>
+    <string name="textoSobre">Sobre</string>
+    <string name="textoConteudoSobre">App criado pelo Grupo 5:\n\n\n- Alvaro Vieira de Morais\n- Elton Silva Buonani\n- Juan Gustavo Silva\n- Luiz Henrique P. de Carvalho\n- Thiago Giacometi do Nascimento</string>
+    <string name="textoMudarSenha">Mudar Senha</string>
+    <string name="textoNome">Nome</string>
+    <string name="textoEmail">Email</string>
+    <string name="textoSenha">Senha</string>
+    <string name="textoSenhaConf">Confirme a Senha</string>
+    <string name="textoTipo">Tipo</string>
+    <string name="textoCategoria">Categoria</string>
+    <string name="textoValor">Valor</string>
+    <string name="textoData">Data</string>
+    <string name="textoObservacao">Observação (Opcional)</string>
+    <string name="textoDinheiro">R$0.00</string>
+    <string name="textoConta">Minha Conta</string>
+    <string name="textoSair">Sair</string>
+    <string name="textoEsqueciSenha">Esqueceu sua senha?</string>
+    <string name="textoMudarNome">Mudar Nome</string>
+</resources>
+
+
+
