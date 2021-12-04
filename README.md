@@ -2,7 +2,7 @@ PI 5º Semestre ADS FATEC Indaiatuba
 
 Aplicativo para controle de finanças denominado My Money App
 
-funcionalidades:
+funcionalidade
 Cadastro de Entradas
 Cadastro de Despesa
 Consulta de Entradas e Despesas cadastradas
