@@ -23,7 +23,7 @@
     <View
         android:id="@+id/cntConteudoCadastro"
         style="@style/ContainerComponents"
-        android:layout_height="335dp"
+        android:layout_height="375dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTitleCadastro" />
@@ -71,6 +71,28 @@
         app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
         app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaCadastro" />
+
+    <CheckBox
+        android:id="@+id/cbTermosUso"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Declaro que li e concordo com os"
+        app:layout_constraintEnd_toStartOf="@+id/txtTermosUso"
+        app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCadastro2"/>
+
+    <TextView
+        android:id="@+id/txtTermosUso"
+        android:layout_width="115dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Termos de Uso"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
+        app:layout_constraintStart_toEndOf="@+id/cbTermosUso"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCadastro2" />
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCadastro"
