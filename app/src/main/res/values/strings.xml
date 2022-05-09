@@ -17,7 +17,7 @@
     <string name="textoMenu">Menu Principal</string>
     <string name="textoCadastrarEntrada">Cadastrar Entrada</string>
     <string name="textoSobre">Sobre</string>
-    <string name="textoConteudoSobre">App criado pelo Grupo 5:\n\n\n- Alvaro Vieira de Morais\n- Elton Silva Buonani\n- Juan Gustavo Silva\n- Luiz Henrique P. de Carvalho\n- Thiago Giacometi do Nascimento</string>
+    <string name="textoConteudoSobre">App criado pelo Grupo 9:\n\n\n- Alvaro Vieira de Morais\n- Elton Silva Buonani\n- Juan Gustavo Silva\n- Luiz Henrique P. de Carvalho\n- Thiago Giacometi do Nascimento</string>
     <string name="textoMudarSenha">Mudar Senha</string>
     <string name="textoNome">Nome</string>
     <string name="textoEmail">Email</string>
@@ -33,6 +33,8 @@
     <string name="textoSair">Sair</string>
     <string name="textoEsqueciSenha">Esqueceu sua senha?</string>
     <string name="textoMudarNome">Mudar Nome</string>
+    <string name="textoDeclaroTermoUso">Declaro que li e concordo com os</string>
+    <string name="textoTermoUso">Termos de Uso</string>
 </resources>
 
 
