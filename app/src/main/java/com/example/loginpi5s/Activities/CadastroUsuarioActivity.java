@@ -1,11 +1,16 @@
 package com.example.loginpi5s.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
 import android.content.Intent;
+import android.graphics.pdf.PdfDocument;
+import android.graphics.pdf.PdfRenderer;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.loginpi5s.AESCrypt;
@@ -24,6 +29,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
     private EditText senhaConfEdt;
     private Button cadastroBtn;
     private UsuarioDAO udao;
+    private CheckBox termoUsoCB;
+    private TextView termosUsoTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +41,11 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
         IniciarComponentes();
 
         udao = new UsuarioDAO(this);
+
+        //função para abrir o termo de uso .pdf (pegar PDF do FireBase)
+        termosUsoTxt.setOnClickListener(view -> {
+
+        });
 
         //funções para o botão cadastrar
         cadastroBtn.setOnClickListener(view -> {
@@ -84,5 +96,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
         senhaUserEdt = (EditText) findViewById(R.id.edtSenhaCadastro);
         senhaConfEdt = (EditText) findViewById(R.id.edtSenhaCadastro2);
         cadastroBtn = (Button) findViewById(R.id.btnCadastro);
+        termoUsoCB = (CheckBox) findViewById(R.id.cbTermosUso);
+        termosUsoTxt = (TextView) findViewById(R.id.txtTermosUso);
     }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "114149613329",
+    "project_id": "mymoneyapp-pi",
+    "storage_bucket": "mymoneyapp-pi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114149613329:android:733223566a18c575a2f6b0",
+        "android_client_info": {
+          "package_name": "com.example.loginpi5s"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114149613329-fi7c641m0p3mii9iop1ttqte07noqk9g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9gj6NW1EHGWjd5sMXwUaaU3RVkkdL1ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114149613329-fi7c641m0p3mii9iop1ttqte07noqk9g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

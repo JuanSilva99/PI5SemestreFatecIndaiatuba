@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoginPI5S</string>
+    <string name="textoEntrar">Login</string>
+    <string name="textoCadastro">New user?</string>
+    <string name="textoTituloCadastro">Register</string>
+    <string name="textoCadastrar">Register</string>
+    <string name="textoSelectCateg">select a category</string>
+    <string name="textoSelectData">select a date</string>
+    <string name="textoCadastrarSaida">Register Output</string>
+    <string name="textoConsulta">Query</string>
+    <string name="textoAtualizar">To update</string>
+    <string name="textoApagar">Delete</string>
+    <string name="textoAtualizarTrans">Update Transaction</string>
+    <string name="textoInserirEntrada">Insert Entry</string>
+    <string name="textoInserirSaida">Insert Output</string>
+    <string name="textoConsultar">Consult</string>
+    <string name="textoMenu">Main menu</string>
+    <string name="textoCadastrarEntrada">register entry</string>
+    <string name="textoSobre">About</string>
+    <string name="textoConteudoSobre">App created by the Group 9:\n\n\n- Alvaro Vieira de Morais\n- Elton Silva Buonani\n- Juan Gustavo Silva\n- Luiz Henrique P. de Carvalho\n- Thiago Giacometi do Nascimento</string>
+    <string name="textoMudarSenha">Change Password</string>
+    <string name="textoNome">Name</string>
+    <string name="textoEmail">Email</string>
+    <string name="textoSenha">Password</string>
+    <string name="textoSenhaConf">Confirm the Password</string>
+    <string name="textoTipo">Type</string>
+    <string name="textoCategoria">Category</string>
+    <string name="textoValor">Value</string>
+    <string name="textoData">Date</string>
+    <string name="textoObservacao">Note (Optional)</string>
+    <string name="textoDinheiro">$0.00</string>
+    <string name="textoConta">My account</string>
+    <string name="textoSair">Exit</string>
+    <string name="textoEsqueciSenha">Forgot your password?</string>
+    <string name="textoMudarNome">change name</string>
+    <string name="textoDeclaroTermoUso">I declare that I have read and agree with the</string>
+    <string name="textoTermoUso">Terms of use</string>
+</resources>

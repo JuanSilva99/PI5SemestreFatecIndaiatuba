@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoginPI5S</string>
+    <string name="textoEntrar">Iniciar sesión</string>
+    <string name="textoCadastro">¿Nuevo Usuario?</string>
+    <string name="textoTituloCadastro">Registro</string>
+    <string name="textoCadastrar">Registrar</string>
+    <string name="textoSelectCateg">Seleccione una categoría</string>
+    <string name="textoSelectData">seleccione una fecha</string>
+    <string name="textoCadastrarSaida">Registro de salida</string>
+    <string name="textoConsulta">Consulta</string>
+    <string name="textoAtualizar">Actualizar</string>
+    <string name="textoApagar">Borrar</string>
+    <string name="textoAtualizarTrans">Actualizar transacción</string>
+    <string name="textoInserirEntrada">Insertar entrada</string>
+    <string name="textoInserirSaida">Insertar salida</string>
+    <string name="textoConsultar">Consultar</string>
+    <string name="textoMenu">Menú principal</string>
+    <string name="textoCadastrarEntrada">Entrada de registro</string>
+    <string name="textoSobre">Sobre</string>
+    <string name="textoConteudoSobre">App creada por el Grupo 9:\n\n\n- Alvaro Vieira de Morais\n- Elton Silva Buonani\n- Juan Gustavo Silva\n- Luiz Henrique P. de Carvalho\n- Thiago Giacometi do Nascimento</string>
+    <string name="textoMudarSenha">Cambia la contraseña</string>
+    <string name="textoNome">Nombre</string>
+    <string name="textoEmail">Email</string>
+    <string name="textoSenha">Clave</string>
+    <string name="textoSenhaConf">confirme la contraseña</string>
+    <string name="textoTipo">Tipo</string>
+    <string name="textoCategoria">Categoría</string>
+    <string name="textoValor">Valor</string>
+    <string name="textoData">fecha</string>
+    <string name="textoObservacao">Nota (Opcional)</string>
+    <string name="textoDinheiro">Є0.00</string>
+    <string name="textoConta">Mi cuenta</string>
+    <string name="textoSair">Salir</string>
+    <string name="textoEsqueciSenha">Olvidaste tu contraseña?</string>
+    <string name="textoMudarNome">cambiar nombre</string>
+    <string name="textoDeclaroTermoUso">Declaro que he leído y estoy de acuerdo con las</string>
+    <string name="textoTermoUso">Terminos de uso</string>
+</resources>
