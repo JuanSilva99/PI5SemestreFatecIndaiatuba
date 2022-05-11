@@ -1,106 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroung"
-    tools:context=".Activities.CadastroUsuarioActivity">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/txtTitleCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textoTituloCadastro"
-        android:textSize="50sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.CadastroUsuarioActivity"
+        android:background="@drawable/backgroung">
 
-    <View
-        android:id="@+id/cntConteudoCadastro"
-        style="@style/ContainerComponents"
-        android:layout_height="405dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleCadastro" />
+        <TextView
+            android:id="@+id/txtTitleCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoTituloCadastro"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
-        android:id="@+id/edtNomeCadastro"
-        style="@style/Edit_Text"
-        android:drawableEnd="@drawable/ic_user"
-        android:hint="@string/textoNome"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@id/cntConteudoCadastro"
-        app:layout_constraintStart_toStartOf="@id/cntConteudoCadastro"
-        app:layout_constraintTop_toTopOf="@id/cntConteudoCadastro" />
+        <View
+            android:id="@+id/cntConteudoCadastro"
+            style="@style/ContainerComponents"
+            android:layout_height="400dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleCadastro" />
 
-    <EditText
-        android:id="@+id/edtEmailCadastro"
-        style="@style/Edit_Text"
-        android:drawableEnd="@drawable/ic_email"
-        android:hint="@string/textoEmail"
-        android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@id/cntConteudoCadastro"
-        app:layout_constraintStart_toStartOf="@id/cntConteudoCadastro"
-        app:layout_constraintTop_toBottomOf="@id/edtNomeCadastro" />
+        <EditText
+            android:id="@+id/edtNomeCadastro"
+            style="@style/Edit_Text"
+            android:drawableEnd="@drawable/ic_user"
+            android:hint="@string/textoNome"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@id/cntConteudoCadastro"
+            app:layout_constraintStart_toStartOf="@id/cntConteudoCadastro"
+            app:layout_constraintTop_toTopOf="@id/cntConteudoCadastro" />
 
-    <EditText
-        android:id="@+id/edtSenhaCadastro"
-        style="@style/Edit_Text"
-        android:drawableEnd="@drawable/ic_lock"
-        android:hint="@string/textoSenha"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@id/cntConteudoCadastro"
-        app:layout_constraintStart_toStartOf="@id/cntConteudoCadastro"
-        app:layout_constraintTop_toBottomOf="@id/edtEmailCadastro" />
+        <EditText
+            android:id="@+id/edtEmailCadastro"
+            style="@style/Edit_Text"
+            android:drawableEnd="@drawable/ic_email"
+            android:hint="@string/textoEmail"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@id/cntConteudoCadastro"
+            app:layout_constraintStart_toStartOf="@id/cntConteudoCadastro"
+            app:layout_constraintTop_toBottomOf="@id/edtNomeCadastro" />
 
-    <EditText
-        android:id="@+id/edtSenhaCadastro2"
-        style="@style/Edit_Text"
-        android:drawableEnd="@drawable/ic_lock"
-        android:hint="@string/textoSenhaConf"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
-        app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCadastro" />
+        <EditText
+            android:id="@+id/edtSenhaCadastro"
+            style="@style/Edit_Text"
+            android:drawableEnd="@drawable/ic_lock"
+            android:hint="@string/textoSenha"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@id/cntConteudoCadastro"
+            app:layout_constraintStart_toStartOf="@id/cntConteudoCadastro"
+            app:layout_constraintTop_toBottomOf="@id/edtEmailCadastro" />
 
-    <CheckBox
-        android:id="@+id/cbTermosUso"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/textoDeclaroTermoUso"
-        app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
-        app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
-        app:layout_constraintTop_toBottomOf="@+id/edtSenhaCadastro2" />
+        <EditText
+            android:id="@+id/edtSenhaCadastro2"
+            style="@style/Edit_Text"
+            android:drawableEnd="@drawable/ic_lock"
+            android:hint="@string/textoSenhaConf"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
+            app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
+            app:layout_constraintTop_toBottomOf="@+id/edtSenhaCadastro" />
 
-    <TextView
-        android:id="@+id/txtTermosUso"
-        android:layout_width="115dp"
-        android:layout_height="20dp"
-        android:text="@string/textoTermoUso"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
-        app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
-        app:layout_constraintTop_toBottomOf="@+id/cbTermosUso" />
+        <CheckBox
+            android:id="@+id/cbTermosUso"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/textoDeclaroTermoUso"
+            app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
+            app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
+            app:layout_constraintTop_toBottomOf="@+id/edtSenhaCadastro2" />
+
+        <TextView
+            android:id="@+id/txtTermosUso"
+            android:layout_width="115dp"
+            android:layout_height="20dp"
+            android:text="@string/textoTermoUso"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/cntConteudoCadastro"
+            app:layout_constraintStart_toStartOf="@+id/cntConteudoCadastro"
+            app:layout_constraintTop_toBottomOf="@+id/cbTermosUso" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCadastro"
-        style="@style/Button"
-        android:layout_marginTop="30dp"
-        android:text="@string/textoCadastrar"
-        app:layout_constraintTop_toBottomOf="@id/cntConteudoCadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCadastro"
+            style="@style/Button"
+            android:layout_marginTop="30dp"
+            android:text="@string/textoCadastrar"
+            app:layout_constraintTop_toBottomOf="@id/cntConteudoCadastro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

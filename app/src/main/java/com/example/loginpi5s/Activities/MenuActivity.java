@@ -1,14 +1,21 @@
 package com.example.loginpi5s.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.loginpi5s.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -20,21 +27,21 @@ public class MenuActivity extends AppCompatActivity {
     private Button sobreBtn;
     private Button efetuarLogoutBtn;
     private TextView userInfoTxt;
-    private SharedPreferences dados;
-    private SharedPreferences.Editor dadosEdit;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        dados = getSharedPreferences("Dados", MODE_PRIVATE);
-        dadosEdit = getSharedPreferences("Dados", MODE_PRIVATE).edit();
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         //chama o método que sincrorniza as views
         IniciarComponentes();
 
         //coloca o nome do usuário no topo da tela
-        userInfoTxt.setText(dados.getString("nome", "nome"));
+        UpdateName();
 
         //função do botão para gerenciar a conta
         contaBtn.setOnClickListener(view -> {
@@ -60,7 +67,7 @@ public class MenuActivity extends AppCompatActivity {
 
         //função do botão para consultar as transações
         historicoBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(MenuActivity.this,HistoricoListActivity.class);
+            Intent intent = new Intent(MenuActivity.this, HistoricoListActivity.class);
             startActivity(intent);
         });
 
@@ -72,25 +79,36 @@ public class MenuActivity extends AppCompatActivity {
 
         //função do botão para fazer logoff
         efetuarLogoutBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
-            dadosEdit.clear(); //limpa as SharedPreferences para impedir o login automatico
-            dadosEdit.apply();
-            startActivity(intent);
+            mAuth.signOut();
             finish();
         });
     }
 
+    //atualiza o nome do usuário no topo da tela
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
-        dados = getSharedPreferences("Dados", MODE_PRIVATE);
+        UpdateName();
+    }
 
-        //atualiza o nome do usuário no topo da tela
-        userInfoTxt.setText(dados.getString("nome", "nome"));
+    //pega o nome do usuario no firebase
+    private void UpdateName() {
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("Usuarios").child(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userInfoTxt.setText(snapshot.child("nome").getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     //sincronizar botões Java com XML
-    private void IniciarComponentes(){
+    private void IniciarComponentes() {
         contaBtn = (Button) findViewById(R.id.btnMinhaConta);
         inserirEntradaBtn = (Button) findViewById(R.id.btnInserirEntrada);
         inserirSaidaBtn = (Button) findViewById(R.id.btnInserirSaida);

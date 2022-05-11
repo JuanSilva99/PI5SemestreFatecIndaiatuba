@@ -1,11 +1,7 @@
 package com.example.loginpi5s.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDialogFragment;
 
-import android.content.Intent;
-import android.graphics.pdf.PdfDocument;
-import android.graphics.pdf.PdfRenderer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,12 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.loginpi5s.AESCrypt;
-import com.example.loginpi5s.DAO.UsuarioDAO;
 import com.example.loginpi5s.R;
 import com.example.loginpi5s.Usuario;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class CadastroUsuarioActivity extends AppCompatActivity implements Serializable {
 
@@ -28,9 +24,9 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
     private EditText senhaUserEdt;
     private EditText senhaConfEdt;
     private Button cadastroBtn;
-    private UsuarioDAO udao;
     private CheckBox termoUsoCB;
     private TextView termosUsoTxt;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +36,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
         //chama o método que sincrorniza as views
         IniciarComponentes();
 
-        udao = new UsuarioDAO(this);
+        mAuth = FirebaseAuth.getInstance();
 
         //função para abrir o termo de uso .pdf (pegar PDF do FireBase)
         termosUsoTxt.setOnClickListener(view -> {
@@ -51,37 +47,12 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
         cadastroBtn.setOnClickListener(view -> {
 
             //validação, confirma se a senha foi digitada corretamente
-            if (senhaUserEdt.getText().toString().equals(senhaConfEdt.getText().toString())){
-                // recebe os valores dos EditTexts
-                Usuario u = new Usuario();
-                u.setNome(nomeUserEdt.getText().toString());
-                u.setEmail(emailUserEdt.getText().toString().toLowerCase());
-                //criptografa a senha
-                try {
-                    u.setSenha(AESCrypt.encrypt(senhaUserEdt.getText().toString()).trim());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
+            if (senhaUserEdt.getText().toString().equals(senhaConfEdt.getText().toString())) {
                 //validação, todos os campos precisam ser preenchidos
-                if (u.getNome().isEmpty() || u.getEmail().isEmpty() || u.getSenha().isEmpty()) {
+                if (nomeUserEdt.getText().toString().equals("") || emailUserEdt.getText().toString().equals("") || senhaUserEdt.getText().toString().equals("") || !termoUsoCB.isChecked()) {
                     Toast.makeText(CadastroUsuarioActivity.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    //validação, email não pode estar cadastrado
-                    if (udao.checkEmail(emailUserEdt.getText().toString())){
-                        Toast.makeText(CadastroUsuarioActivity.this, "E-mail já registrado", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        //chama a gravação no BD
-                        if (udao.inserir(u)){
-                            //confirma a gravação
-                            Toast.makeText(CadastroUsuarioActivity.this, "Novo usuário registrado", Toast.LENGTH_SHORT).show();
-                            finish();
-                        } else {
-                            Toast.makeText(CadastroUsuarioActivity.this, "Falha ao registrar novo usuário", Toast.LENGTH_SHORT).show();
-                        }
-                    }
+                } else {
+                    registerUser();
                 }
             } else {
                 Toast.makeText(CadastroUsuarioActivity.this, "Confirmação de senha incorreta", Toast.LENGTH_SHORT).show();
@@ -89,8 +60,29 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
         });
     }
 
+    public void registerUser() {
+        Usuario u = new Usuario();
+        u.setNome(nomeUserEdt.getText().toString());
+        u.setEmail(emailUserEdt.getText().toString().toLowerCase());
+        u.setSenha(senhaUserEdt.getText().toString());
+        mAuth.createUserWithEmailAndPassword(u.getEmail(), u.getSenha())
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        u.setId(mAuth.getUid());
+                        u.save();
+                        finish();
+                    } else {
+                        String error = Objects.requireNonNull(task.getException()).getMessage();
+                        Toast.makeText(
+                                CadastroUsuarioActivity.this,
+                                "" + error,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
     //sincronizar botões Java com XML
-    private void IniciarComponentes(){
+    private void IniciarComponentes() {
         nomeUserEdt = (EditText) findViewById(R.id.edtNomeCadastro);
         emailUserEdt = (EditText) findViewById(R.id.edtEmailCadastro);
         senhaUserEdt = (EditText) findViewById(R.id.edtSenhaCadastro);
