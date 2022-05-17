@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class Transacao implements Serializable {
 
     //declaração de atributos
-    private Integer id;
-    private Integer id_user;
+    private String id;
+    private String id_user;
     private String tipo;
     private String categoria;
     private String valor;
@@ -18,7 +18,7 @@ public class Transacao implements Serializable {
 
     }
 
-    public Transacao(Integer id, Integer id_user, String tipo, String categoria, String valor, String data, String observacao) {
+    public Transacao(String id, String id_user, String tipo, String categoria, String valor, String data, String observacao) {
         this.id = id;
         this.id_user = id_user;
         this.tipo = tipo;
@@ -28,7 +28,7 @@ public class Transacao implements Serializable {
         this.observacao = observacao;
     }
 
-    public Transacao(Integer id, String categoria, String valor, String data, String observacao) {
+    public Transacao(String id, String categoria, String valor, String data, String observacao) {
         this.id = id;
         this.categoria = categoria;
         this.valor = valor;
@@ -37,19 +37,19 @@ public class Transacao implements Serializable {
     }
 
     //getters e setters
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getId_user() {
+    public String getId_user() {
         return id_user;
     }
 
-    public void setId_user(Integer id_user) {
+    public void setId_user(String id_user) {
         this.id_user = id_user;
     }
 

@@ -84,13 +84,6 @@ public class MenuActivity extends AppCompatActivity {
         });
     }
 
-    //atualiza o nome do usuário no topo da tela
-    @Override
-    protected void onResume() {
-        super.onResume();
-        UpdateName();
-    }
-
     //pega o nome do usuario no firebase
     private void UpdateName() {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();

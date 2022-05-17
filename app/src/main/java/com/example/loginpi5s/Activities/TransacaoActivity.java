@@ -1,5 +1,6 @@
 package com.example.loginpi5s.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -16,6 +17,13 @@ import android.widget.Toast;
 import com.example.loginpi5s.DAO.TransacaoDAO;
 import com.example.loginpi5s.R;
 import com.example.loginpi5s.Transacao;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -30,14 +38,18 @@ public class TransacaoActivity extends AppCompatActivity {
     private TransacaoDAO tdao;
     private TextView userInfoTxt;
     private TextView tituloTxt;
-    private Integer id;
+    private String id;
     private Context context;
     private SharedPreferences dados;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transacao);
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();;
         context = TransacaoActivity.this;
         dados = getSharedPreferences("Dados", MODE_PRIVATE);
         tdao = new TransacaoDAO(this);
@@ -46,7 +58,7 @@ public class TransacaoActivity extends AppCompatActivity {
         IniciarComponentes();
 
         //coloca o nome do usuário logado no topo da tela
-        userInfoTxt.setText(dados.getString("nome", "nome"));
+        UpdateName();
 
         //recebe o tipo e classe que a tela incorporará (entrada ou saída, cadastro ou atualização)
         String tipo = getIntent().getExtras().getString("tipo");
@@ -113,7 +125,7 @@ public class TransacaoActivity extends AppCompatActivity {
             if (classe.equals("new")){
                 //recebe os valores dos EditTexts
                 Transacao t = new Transacao();
-                t.setId_user(dados.getInt("id",0));
+                t.setId_user(currentUser.getUid());
                 t.setTipo(tipo);
                 t.setCategoria(categoriaACTV.getText().toString());
                 t.setValor(valorEdt.getText().toString());
@@ -153,6 +165,22 @@ public class TransacaoActivity extends AppCompatActivity {
                         Toast.makeText(this, "Falha na atualização", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+    }
+
+    //pega o nome do usuario no firebase
+    private void UpdateName() {
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("Usuarios").child(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userInfoTxt.setText(snapshot.child("nome").getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
