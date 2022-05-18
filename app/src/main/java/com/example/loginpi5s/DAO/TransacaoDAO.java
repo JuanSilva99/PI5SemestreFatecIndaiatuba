@@ -91,8 +91,8 @@ public class TransacaoDAO {
                 String data = cursor.getString(5);
                 String obs = cursor.getString(6);
 
-                Transacao s = new Transacao(id2, id_user2, tipo, categoria, valor, data, obs);
-                registro.add(s);
+                //Transacao s = new Transacao(id2, id_user2, tipo, categoria, valor, data, obs);
+                //registro.add(s);
 
             } while (cursor.moveToNext());
         }
