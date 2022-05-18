@@ -66,10 +66,10 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         //função do botão para consultar as transações
-        historicoBtn.setOnClickListener(view -> {
+        /*historicoBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MenuActivity.this, HistoricoListActivity.class);
             startActivity(intent);
-        });
+        });*/
 
         //função do botão para informações sobre o app
         sobreBtn.setOnClickListener(view -> {

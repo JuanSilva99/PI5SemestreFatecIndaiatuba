@@ -1,5 +1,8 @@
 package com.example.loginpi5s;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.Serializable;
 
 public class Transacao implements Serializable {
@@ -91,5 +94,10 @@ public class Transacao implements Serializable {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public void save() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        reference.child("Usuarios").child(getId()).child("Transacoes").setValue(this);
     }
 }

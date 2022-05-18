@@ -1,4 +1,4 @@
-package com.example.loginpi5s.Activities;
+/*package com.example.loginpi5s.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -51,4 +51,4 @@ public class HistoricoListActivity extends AppCompatActivity {
     private void IniciarComponentes(){
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
     }
-}
+}*/

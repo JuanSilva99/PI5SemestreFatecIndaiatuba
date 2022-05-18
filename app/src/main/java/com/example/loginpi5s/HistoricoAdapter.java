@@ -1,4 +1,4 @@
-package com.example.loginpi5s;
+/*package com.example.loginpi5s;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -116,4 +116,4 @@ public class HistoricoAdapter extends RecyclerView.Adapter<HistoricoAdapter.Hist
             deleteCrd = (CardView) v.findViewById(R.id.crdDelete);
         }
     }
-}
+}*/

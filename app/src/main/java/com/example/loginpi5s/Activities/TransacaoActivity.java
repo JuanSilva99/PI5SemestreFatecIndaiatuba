@@ -137,10 +137,12 @@ public class TransacaoActivity extends AppCompatActivity {
                     Toast.makeText(context, "Preencha todos os campos necessários!", Toast.LENGTH_SHORT).show();
                 } else {
                     //insere a transação no banco de dados
-                    if (tdao.inserir(t)){
+                    try {
+                        t.setId(mAuth.getUid());
+                        t.save();
                         Toast.makeText(context, "Entrada registrada com sucesso", Toast.LENGTH_SHORT).show();
                         finish();
-                    } else {
+                    } catch (Exception e){
                         Toast.makeText(context, "Falha ao registrar a entrada", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -155,13 +157,15 @@ public class TransacaoActivity extends AppCompatActivity {
                     Toast.makeText(context, "Preencha todos os campos necessários!", Toast.LENGTH_SHORT).show();
                 } else {
                     Transacao s = new Transacao(id, categoria, valor, data, obs);
-                    TransacaoDAO dao = new TransacaoDAO(this);
+                    //TransacaoDAO dao = new TransacaoDAO(this);
 
                     //atualiza a transação no banco de dados
-                    if(dao.atualizar(s)){
+                    try {
+                        s.setId(mAuth.getUid());
+                        s.save();
                         Toast.makeText(this, "Atualizado com sucesso", Toast.LENGTH_SHORT).show();
                         finish();
-                    } else {
+                    } catch (Exception e){
                         Toast.makeText(this, "Falha na atualização", Toast.LENGTH_SHORT).show();
                     }
                 }
