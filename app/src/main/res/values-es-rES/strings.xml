@@ -33,7 +33,6 @@
     <string name="textoConta">Mi cuenta</string>
     <string name="textoSair">Salir</string>
     <string name="textoEsqueciSenha">Olvidaste tu contraseña?</string>
-    <string name="textoMudarNome">cambiar nombre</string>
     <string name="textoDeclaroTermoUso">Declaro que he leído y estoy de acuerdo con las</string>
     <string name="textoTermoUso">Terminos de uso</string>
 </resources>

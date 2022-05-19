@@ -33,7 +33,6 @@
     <string name="textoConta">My account</string>
     <string name="textoSair">Exit</string>
     <string name="textoEsqueciSenha">Forgot your password?</string>
-    <string name="textoMudarNome">change name</string>
     <string name="textoDeclaroTermoUso">I declare that I have read and agree with the</string>
     <string name="textoTermoUso">Terms of use</string>
 </resources>
