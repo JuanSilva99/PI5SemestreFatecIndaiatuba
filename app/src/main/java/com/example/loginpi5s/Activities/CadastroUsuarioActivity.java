@@ -61,15 +61,16 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
     }
 
     public void registerUser() {
-        Usuario u = new Usuario();
-        u.setNome(nomeUserEdt.getText().toString());
-        u.setEmail(emailUserEdt.getText().toString().toLowerCase());
-        u.setSenha(senhaUserEdt.getText().toString());
-        mAuth.createUserWithEmailAndPassword(u.getEmail(), u.getSenha())
+        Usuario u = new Usuario(
+            nomeUserEdt.getText().toString(),
+            emailUserEdt.getText().toString().toLowerCase()
+        );
+
+        mAuth.createUserWithEmailAndPassword(u.getEmail(), senhaUserEdt.getText().toString())
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        u.setId(mAuth.getUid());
-                        u.save();
+                        u.save(mAuth.getUid());
+                        Toast.makeText(CadastroUsuarioActivity.this, "Usuário registrado com sucesso!", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
                         String error = Objects.requireNonNull(task.getException()).getMessage();

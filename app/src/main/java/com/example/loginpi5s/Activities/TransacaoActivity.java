@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.loginpi5s.DAO.TransacaoDAO;
 import com.example.loginpi5s.R;
 import com.example.loginpi5s.Transacao;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,12 +34,9 @@ public class TransacaoActivity extends AppCompatActivity {
     private EditText dataEdt;
     private EditText observacaoEdt;
     private Button confirmarBtn;
-    private TransacaoDAO tdao;
     private TextView userInfoTxt;
     private TextView tituloTxt;
-    private String id;
     private Context context;
-    private SharedPreferences dados;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
 
@@ -49,10 +45,8 @@ public class TransacaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transacao);
         mAuth = FirebaseAuth.getInstance();
-        currentUser = FirebaseAuth.getInstance().getCurrentUser();;
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
         context = TransacaoActivity.this;
-        dados = getSharedPreferences("Dados", MODE_PRIVATE);
-        tdao = new TransacaoDAO(this);
 
         //chama o método que sincrorniza as views
         IniciarComponentes();
@@ -63,10 +57,11 @@ public class TransacaoActivity extends AppCompatActivity {
         //recebe o tipo e classe que a tela incorporará (entrada ou saída, cadastro ou atualização)
         String tipo = getIntent().getExtras().getString("tipo");
         String classe = getIntent().getExtras().getString("classe");
+        String key = getIntent().getExtras().getString("key");
 
         //configura título e itens das categorias de acordo com o tipo
         String[] items;
-        if (tipo.equals("Entrada")){
+        if (tipo.equals("Entrada")) {
             items = new String[]{
                     "Salário",
                     "Renda Extra",
@@ -87,11 +82,10 @@ public class TransacaoActivity extends AppCompatActivity {
         }
 
         //configura título e outros de acordo com a classe
-        if (classe.equals("att")){
+        if (classe.equals("att")) {
             tituloTxt.setText(R.string.textoAtualizarTrans);
             confirmarBtn.setText(R.string.textoAtualizar);
             Transacao s = (Transacao) getIntent().getExtras().getSerializable("HISTORICO");
-            id = s.getId();
             categoriaACTV.setText(s.getCategoria());
             valorEdt.setText(s.getValor());
             dataEdt.setText(s.getData());
@@ -112,38 +106,36 @@ public class TransacaoActivity extends AppCompatActivity {
         dataEdt.setOnClickListener(view -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(
                     TransacaoActivity.this, (datePicker, year1, month1, day1) -> {
-                        month1 = month1 +1;
-                        String date = day1 +"/"+ month1 +"/"+ year1;
-                        dataEdt.setText(date);
-                    },year,month,day);
+                month1 = month1 + 1;
+                String date = day1 + "/" + month1 + "/" + year1;
+                dataEdt.setText(date);
+            }, year, month, day);
             datePickerDialog.show();
         });
 
         //funções do botão "Cadastrar/Atualizar"
         confirmarBtn.setOnClickListener(view -> {
             //funções em caso de cadastro
-            if (classe.equals("new")){
+            if (classe.equals("new")) {
                 //recebe os valores dos EditTexts
-                Transacao t = new Transacao();
-                t.setId_user(currentUser.getUid());
-                t.setTipo(tipo);
-                t.setCategoria(categoriaACTV.getText().toString());
-                t.setValor(valorEdt.getText().toString());
-                t.setData(dataEdt.getText().toString());
-                t.setObservacao(observacaoEdt.getText().toString());
+                Transacao t = new Transacao(
+                    categoriaACTV.getText().toString(),
+                    valorEdt.getText().toString(),
+                    dataEdt.getText().toString(),
+                    observacaoEdt.getText().toString()
+                );
 
                 //validação, todos os campos precisam ser preenchidos
-                if (t.getCategoria().isEmpty() || t.getValor().isEmpty() || t.getData().isEmpty()){
+                if (t.getCategoria().isEmpty() || t.getValor().isEmpty() || t.getData().isEmpty()) {
                     Toast.makeText(context, "Preencha todos os campos necessários!", Toast.LENGTH_SHORT).show();
                 } else {
                     //insere a transação no banco de dados
                     try {
-                        t.setId(mAuth.getUid());
-                        t.save();
+                        t.save(tipo, mAuth.getUid(), "");
                         Toast.makeText(context, "Entrada registrada com sucesso", Toast.LENGTH_SHORT).show();
                         finish();
-                    } catch (Exception e){
-                        Toast.makeText(context, "Falha ao registrar a entrada", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        Toast.makeText(this, "" + e, Toast.LENGTH_SHORT).show();
                     }
                 }
             } else { //funções em caso de atualização
@@ -153,19 +145,18 @@ public class TransacaoActivity extends AppCompatActivity {
                 String obs = observacaoEdt.getText().toString().trim();
 
                 //validação, todos os campos precisam ser preenchidos
-                if (categoria.isEmpty() || valor.isEmpty() || data.isEmpty()){
+                if (categoria.isEmpty() || valor.isEmpty() || data.isEmpty()) {
                     Toast.makeText(context, "Preencha todos os campos necessários!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Transacao s = new Transacao(id, categoria, valor, data, obs);
-                    //TransacaoDAO dao = new TransacaoDAO(this);
+                    Transacao s = new Transacao(tipo, categoria, valor, data, obs);
 
                     //atualiza a transação no banco de dados
                     try {
-                        s.setId(mAuth.getUid());
-                        s.save();
+                        s.save(tipo, mAuth.getUid(), key);
                         Toast.makeText(this, "Atualizado com sucesso", Toast.LENGTH_SHORT).show();
-                        finish();
-                    } catch (Exception e){
+                        Intent intent = new Intent(this, MenuActivity.class);
+                        startActivity(intent);
+                    } catch (Exception e) {
                         Toast.makeText(this, "Falha na atualização", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -190,7 +181,7 @@ public class TransacaoActivity extends AppCompatActivity {
     }
 
     //sincronizar botões Java com XML
-    private void IniciarComponentes(){
+    private void IniciarComponentes() {
         categoriaACTV = (AutoCompleteTextView) findViewById(R.id.actCategoriaTransacao);
         valorEdt = (EditText) findViewById(R.id.edtValorTransacao);
         dataEdt = (EditText) findViewById(R.id.edtDataTransacao);
