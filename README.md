@@ -1,4 +1,4 @@
-PI 5º Semestre ADS FATEC Indaiatuba
+PI 6º Semestre ADS FATEC Indaiatuba
 
 Aplicativo para controle de finanças denominado My Money App
 
