@@ -2,6 +2,8 @@ package com.example.loginpi5s.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -32,15 +34,16 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_usuario);
+        mAuth = FirebaseAuth.getInstance();
 
         //chama o método que sincrorniza as views
         IniciarComponentes();
 
-        mAuth = FirebaseAuth.getInstance();
-
         //função para abrir o termo de uso .pdf (pegar PDF do FireBase)
         termosUsoTxt.setOnClickListener(view -> {
-
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://firebasestorage.googleapis.com/v0/b/mymoneyapp-pi.appspot.com/o/teste.pdf?alt=media&token=883bbb4a-ef3d-4127-b697-05eef67a11e8"));
+            startActivity(i);
         });
 
         //funções para o botão cadastrar
