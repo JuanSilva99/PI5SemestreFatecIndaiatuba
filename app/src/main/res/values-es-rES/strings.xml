@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LoginPI5S</string>
+    <string name="app_name">My Money App</string>
     <string name="textoEntrar">Iniciar sesión</string>
     <string name="textoCadastro">¿Nuevo Usuario?</string>
     <string name="textoTituloCadastro">Registro</string>
