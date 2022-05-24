@@ -42,7 +42,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements Serial
         //função para abrir o termo de uso .pdf (pegar PDF do FireBase)
         termosUsoTxt.setOnClickListener(view -> {
             Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse("https://firebasestorage.googleapis.com/v0/b/mymoneyapp-pi.appspot.com/o/teste.pdf?alt=media&token=883bbb4a-ef3d-4127-b697-05eef67a11e8"));
+            i.setData(Uri.parse("https://firebasestorage.googleapis.com/v0/b/mymoneyapp-pi.appspot.com/o/Termos%20de%20Uso%20e%20Responsabilidade%20-%20My%20Money%20App.pdf?alt=media&token=6d9ee74b-4662-44bc-84bf-84f27fd1e0f4"));
             startActivity(i);
         });
 
